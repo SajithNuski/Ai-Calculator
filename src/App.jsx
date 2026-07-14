@@ -2,9 +2,13 @@ function App() {
 
   return (
     <>
-      <h1 class="text-3xl font-bold text-red-500 underline">
-        Hello world!
-      </h1>
+      <div className="min-h-screen bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div>
+          <h1 className="text-5xl font-bold text-center text-white">
+            Calculator
+          </h1>
+        </div>
+      </div>
     </>
   )
 }
