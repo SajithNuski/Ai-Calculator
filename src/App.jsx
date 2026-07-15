@@ -43,8 +43,15 @@ function App() {
                 <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">=</button>
               </div>
             </div>
-              <div>World</div>
-            <div>World</div>
+            {/* Ai explaination box */}
+            <div className="p-5 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20">
+              <div className="flex items-center justify-between">
+
+              <h2 className="text-white/80 text-xs uppercase">Ai Explain</h2>
+              <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" >Explain</button>
+              </div>
+              <p className="mt-2 text-white/80 text-sm min-h-[180px]">waiting for response ... </p>
+            </div>
           </div>
 
 
