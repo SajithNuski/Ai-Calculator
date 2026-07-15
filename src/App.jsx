@@ -20,6 +20,28 @@ function App() {
                 <div className="text-white/80 text-xs uppercase">  Result </div>
                 <div className="text-white text-lg min-h-[48px]">test</div>
               </div>
+
+              {/* keypad */}
+              <div className="grid grid-cols-4 gap-2">
+                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">C</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">%</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">/</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">7</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">8</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">9</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">*</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">4</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">5</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">6</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">-</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">1</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">2</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">3</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">+</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">0</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">.</button>
+                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">=</button>
+              </div>
             </div>
               <div>World</div>
             <div>World</div>
