@@ -11,7 +11,6 @@ function App() {
 
     const handleClick=(value)=>{
         setExpression((pre)=>pre+value);
-        console.log(value);
     }
 
     const handleClear=()=>{
@@ -50,7 +49,7 @@ function App() {
       setLoading(true);
       setAiMessage("Thinking...");
       const text = await explainExpression(Expression,result);
-      // setAiMessage(text);
+      console.log(text);
     }
       
 
