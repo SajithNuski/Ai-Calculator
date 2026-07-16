@@ -44,13 +44,18 @@ function App() {
               </div>
             </div>
             {/* Ai explaination box */}
-            <div className="p-5 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20">
+            <div className="p-5 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 relative">
               <div className="flex items-center justify-between">
 
               <h2 className="text-white/80 text-xs uppercase">Ai Explain</h2>
               <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" >Explain</button>
               </div>
               <p className="mt-2 text-white/80 text-sm min-h-[180px]">waiting for response ... </p>
+
+              {/* bottom privacy */}
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[10px] w-full px-3 text-center text-white/40">
+                Privacy: We only send the finall expressions and results when you click "Ask AI". 
+              </div>
             </div>
           </div>
 
