@@ -14,6 +14,20 @@ function App() {
         console.log(value);
     }
 
+    const handleClear=()=>{
+        setExpression("");
+        setResult("");
+        setAiMessage("Type an expressiona and click =");
+        setLoading(false);
+    }
+
+    const handleDelete=()=>{
+        setExpression((pre)=>pre.slice(0,-1));
+        setResult("");
+        setAiMessage("Type an expressiona and click =");
+        setLoading(false);
+    }
+
 
   return (
     <>
@@ -30,7 +44,7 @@ function App() {
             <div className="p-5 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20">
               <div className="mb-4">
                 <div className="text-white/80 text-xs uppercase">  Expressions </div>
-                <div className="text-white text-lg min-h-[48px]">0</div>
+                <div className="text-white text-lg min-h-[48px]">{Expression || "0"}</div>
                 <div className="h-px bg-white/10 my-3"></div>
                 <div className="text-white/80 text-xs uppercase">  Result </div>
                 <div className="text-white text-lg min-h-[48px]">test</div>
@@ -38,7 +52,8 @@ function App() {
 
               {/* keypad */}
               <div className="grid grid-cols-4 gap-2">
-                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">C</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClear()}>C</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleDelete()}>del</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("%")}>%</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("/")}>/</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("7")}>7</button>
@@ -55,7 +70,7 @@ function App() {
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("+")}>+</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("0")}>0</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick(".")}>.</button>
-                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("=")}>=</button>
+                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">=</button>
               </div>
             </div>
             {/* Ai explaination box */}
