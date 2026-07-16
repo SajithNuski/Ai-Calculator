@@ -7,7 +7,7 @@ function App() {
     const [result , setResult ] = useState("");
     const [aiMesaage,setAiMessage]=useState("Type an expressiona and click =");
     
-    const [loading,setLoading]=useState(false);
+    const [loading,setLoading]=useState(true);
 
     const handleClick=(value)=>{
         setExpression((pre)=>pre+value);
@@ -45,6 +45,14 @@ function App() {
             setLoading(false);
         }
     }
+
+    const handleAskAi=async()=>{
+      setLoading(true);
+      setAiMessage("Thinking...");
+      const text = await explainExpression(Expression,result);
+      // setAiMessage(text);
+    }
+      
 
   return (
     <>
@@ -95,7 +103,10 @@ function App() {
               <div className="flex items-center justify-between">
 
               <h2 className="text-white/80 text-xs uppercase">Ai Explain</h2>
-              <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" >Explain</button>
+              <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" >
+              onClick={handleAskAi}
+              disabled={loading}
+              {loading ? "Thinking..." : "Ask AI"}</button>
               </div>
               <p className="mt-2 text-white/80 text-sm min-h-[180px]">waiting for response ... </p>
 
