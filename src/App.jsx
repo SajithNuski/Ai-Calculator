@@ -1,4 +1,19 @@
+import { useState } from "react";
+
 function App() {
+
+
+    const [Expression , setExpression ] = useState("");
+    const [result , setResult ] = useState("");
+    const [aiMesaage,setAiMessage]=useState("Type an expressiona and click =");
+    
+    const [loading,setLoading]=useState(false);
+
+    const handleClick=(value)=>{
+        setExpression((pre)=>pre+value);
+        console.log(value);
+    }
+
 
   return (
     <>
@@ -24,23 +39,23 @@ function App() {
               {/* keypad */}
               <div className="grid grid-cols-4 gap-2">
                 <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">C</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">%</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">/</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">7</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">8</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">9</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">*</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">4</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">5</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">6</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">-</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">1</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">2</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">3</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">+</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">0</button>
-                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">.</button>
-                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">=</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("%")}>%</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("/")}>/</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("7")}>7</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("8")}>8</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("9")}>9</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("*")}>*</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("4")}>4</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("5")}>5</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("6")}>6</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("-")}>-</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("1")}>1</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("2")}>2</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("3")}>3</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("+")}>+</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("0")}>0</button>
+                <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick(".")}>.</button>
+                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("=")}>=</button>
               </div>
             </div>
             {/* Ai explaination box */}
