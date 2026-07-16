@@ -28,6 +28,23 @@ function App() {
         setLoading(false);
     }
 
+    const handleEqual=async ()=>{
+        setLoading(true);
+        setAiMessage("Thinking...");
+
+        try{
+            const res=eval(Expression);
+            setResult(res);
+            setAiMessage(`✅ I just calculated ${Expression} and the answer is ${res}. Need help with anything else?`);
+        }
+        catch(error){
+            setResult("Error");
+            setAiMessage(`❌ Error: ${error.message}`);
+        }
+        finally{
+            setLoading(false);
+        }
+    }
 
   return (
     <>
@@ -47,7 +64,7 @@ function App() {
                 <div className="text-white text-lg min-h-[48px]">{Expression || "0"}</div>
                 <div className="h-px bg-white/10 my-3"></div>
                 <div className="text-white/80 text-xs uppercase">  Result </div>
-                <div className="text-white text-lg min-h-[48px]">test</div>
+                <div className="text-white text-lg min-h-[48px]">{result || "0"}</div>
               </div>
 
               {/* keypad */}
@@ -70,7 +87,7 @@ function App() {
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("+")}>+</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick("0")}>0</button>
                 <button className="p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleClick(".")}>.</button>
-                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20">=</button>
+                <button className="col-span-2 p-3 text-white rounded-lg bg-white/10 hover:bg-white/20" onClick={()=>handleEqual()}>=</button>
               </div>
             </div>
             {/* Ai explaination box */}
