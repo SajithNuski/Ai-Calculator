@@ -77,13 +77,13 @@ function App() {
   return (
     <div className="luxury-shell min-h-screen text-white">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-24 left-[-6rem] h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
-        <div className="absolute top-32 right-[-5rem] h-80 w-80 rounded-full bg-amber-200/15 blur-3xl" />
-        <div className="absolute bottom-[-6rem] left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-slate-500/20 blur-3xl" />
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="absolute top-32 -right-20 h-80 w-80 rounded-full bg-amber-200/15 blur-3xl" />
+        <div className="absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-slate-500/20 blur-3xl" />
       </div>
 
       <main className="relative mx-auto flex min-h-screen w-full max-w-7xl items-center px-4 py-8 sm:px-6 lg:px-8">
-        <div className="luxury-frame w-full rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-3xl sm:p-6 lg:p-8">
+        <div className="luxury-frame w-full rounded-4xl border border-white/10 bg-white/5 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-3xl sm:p-6 lg:p-8">
           <div className="mb-8 flex flex-col gap-4 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/60">
@@ -115,21 +115,21 @@ function App() {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-            <section className="rounded-[1.75rem] border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.04] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:p-6">
+            <section className="rounded-[1.75rem] border border-white/10 bg-linear-to-b from-white/10 to-white/4 p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:p-6">
               <div className="mb-5 grid gap-4 sm:grid-cols-[1.3fr_0.7fr]">
                 <div className="rounded-[1.4rem] border border-white/10 bg-slate-950/40 px-5 py-4 shadow-inner shadow-black/30">
                   <div className="text-[10px] uppercase tracking-[0.35em] text-white/40">
                     Current Expression
                   </div>
-                  <div className="mt-3 min-h-[72px] text-3xl font-light tracking-tight text-white sm:text-4xl">
+                  <div className="mt-3 min-h-18 text-3xl font-light tracking-tight text-white sm:text-4xl">
                     {expression || "0"}
                   </div>
                 </div>
-                <div className="rounded-[1.4rem] border border-amber-200/20 bg-gradient-to-br from-amber-200/15 via-white/5 to-cyan-300/10 px-5 py-4 shadow-inner shadow-black/20">
+                <div className="rounded-[1.4rem] border border-amber-200/20 bg-linear-to-br from-amber-200/15 via-white/5 to-cyan-300/10 px-5 py-4 shadow-inner shadow-black/20">
                   <div className="text-[10px] uppercase tracking-[0.35em] text-amber-50/55">
                     Luxury Result
                   </div>
-                  <div className="mt-3 min-h-[72px] text-3xl font-semibold tracking-tight text-amber-50 sm:text-4xl">
+                  <div className="mt-3 min-h-18 text-3xl font-semibold tracking-tight text-amber-50 sm:text-4xl">
                     {result || "0"}
                   </div>
                 </div>
@@ -223,8 +223,8 @@ function App() {
               </div>
             </section>
 
-            <section className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:p-6">
-              <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+            <section className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/6 p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:p-6">
+              <div className="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-white/25 to-transparent" />
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.35em] text-white/40">
@@ -243,13 +243,13 @@ function App() {
                 </button>
               </div>
 
-              <div className="mt-6 min-h-[260px] rounded-[1.4rem] border border-white/10 bg-slate-950/35 p-5 text-sm leading-7 text-white/75 shadow-inner shadow-black/30 sm:text-base">
+              <div className="mt-6 min-h-64 rounded-[1.4rem] border border-white/10 bg-slate-950/35 p-5 text-sm leading-7 text-white/75 shadow-inner shadow-black/30 sm:text-base">
                 <p className="text-white/90">{aiMessage}</p>
                 <div className="mt-6 grid gap-3 text-[11px] uppercase tracking-[0.3em] text-white/40 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
+                  <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                     Safe UI flow
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
+                  <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                     Glassmorphism styling
                   </div>
                 </div>
